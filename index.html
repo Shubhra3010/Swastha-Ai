@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Swasth AI - Multilingual Health Information Chatbot">
+    <title>Swasth AI - Health Information Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🏥 Swasth AI</h1>
+                <p class="tagline">Your Multilingual Health Information Assistant</p>
+            </div>
+            <div class="header-controls">
+                <select id="language-selector" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="zh">中文 (Chinese)</option>
+                    <option value="ar">العربية (Arabic)</option>
+                </select>
+                <a href="admin.html" class="admin-link" aria-label="Admin panel">⚙️ Admin</a>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-container" id="chat-container" role="main" aria-live="polite">
+            <div class="welcome-message">
+                <div class="bot-icon">🤖</div>
+                <h2>Welcome to Swasth AI!</h2>
+                <p>Ask me any health-related question in your preferred language. I'm here to help with disease information, symptoms, prevention, and general health advice.</p>
+                <div class="example-questions">
+                    <p><strong>Try asking:</strong></p>
+                    <button class="example-btn" data-question="What are the symptoms of diabetes?">What are the symptoms of diabetes?</button>
+                    <button class="example-btn" data-question="How can I prevent heart disease?">How can I prevent heart disease?</button>
+                    <button class="example-btn" data-question="What is malaria?">What is malaria?</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <form id="chat-form" role="search">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Type your health question here..." 
+                    rows="1"
+                    aria-label="Health question input"
+                    required
+                ></textarea>
+                <button type="submit" id="send-btn" aria-label="Send message">
+                    <span class="send-icon">➤</span>
+                </button>
+            </form>
+            <div class="input-footer">
+                <small>⚠️ This is for informational purposes only. Always consult a healthcare professional for medical advice.</small>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="loading-indicator" style="display: none;" role="status" aria-live="polite">
+            <div class="spinner"></div>
+            <span>Thinking...</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
